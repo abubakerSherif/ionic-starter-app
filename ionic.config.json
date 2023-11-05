@@ -1,0 +1,7 @@
+{
+  "name": "deliv",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

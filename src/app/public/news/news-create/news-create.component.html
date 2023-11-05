@@ -1,0 +1,52 @@
+<form [formGroup]="form">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Item Name</ion-label>
+      <ion-input formControlName="title" type="text" placeholder="Enter item name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Date</ion-label>
+      <!-- <ion-textarea placeholder="Enter item description"></ion-textarea> -->
+
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime [(ngModel)]="dateExample" id="datetime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+      <br>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Price</ion-label>
+      <ion-input type="number" placeholder="Enter item price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Barcode</ion-label>
+      <ion-input type="text" placeholder="Scan barcode" formControlName="barcode"></ion-input>
+      <app-barcode-scanner (barcodeScanned)="emitBarcode($event)"></app-barcode-scanner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">GPS</ion-label>
+      <app-input-button (click)="currentPosition()" [item]="'locate-outline'">
+        <ion-input formControlName="gps" type="text" placeholder="GPS"></ion-input>
+      </app-input-button>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="stacked">Category</ion-label>
+      <ion-select>
+        <ion-select-option value="electronics">Electronics</ion-select-option>
+        <ion-select-option value="clothing">Clothing</ion-select-option>
+        <ion-select-option value="books">Books</ion-select-option>
+        <ion-select-option value="other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" (click)="clicked()">Save</ion-button>
+
+  </ion-list>
+</form>
