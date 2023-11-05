@@ -133,3 +133,4 @@ dist
 android/
 ios/
 www/
+.angular/

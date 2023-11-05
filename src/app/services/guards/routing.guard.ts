@@ -31,6 +31,7 @@ export class RoutingGuard implements CanActivate {
     try {
       const user = JSON.parse(localStorage.getItem('user') || '');
       if(user){
+        console.log(user);
         if (user.user_type == 4) {
           return true;
         } else {

@@ -13,19 +13,22 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { RoutingGuard } from './services/guards/routing.guard';
 import { TabsPageModule } from './tabs/tabs.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule, 
-    IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
     AuthModule,
     PublicModule,
     TabsPageModule,
-    PrivateModule
+    PrivateModule,
+    IonicModule.forRoot(), 
+
   ],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },AuthGuard, RoutingGuard],
   bootstrap: [AppComponent],
