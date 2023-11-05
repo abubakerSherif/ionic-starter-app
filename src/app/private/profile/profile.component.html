@@ -1,0 +1,30 @@
+<ion-card>
+    <img alt="Silhouette of mountains" height="300px" width="100%" src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" />
+    <ion-card-header>
+      <ion-card-subtitle>{{this.data.username}}</ion-card-subtitle>
+      <ion-card-title>{{this.data.username}}</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="mail" slot="start"></ion-icon>
+          <ion-label>{{this.data.email}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="person-outline" slot="start"></ion-icon>
+          <ion-label>{{this.data.username}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="call-outline" slot="start"></ion-icon>
+          <ion-label>{{this.data.country_code}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="home-outline" slot="start"></ion-icon>
+          <ion-label>{{this.data.phone}}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button (click)="logout()" expand="block">Logout</ion-button> 
+
+    <!-- <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content> -->
+  </ion-card>

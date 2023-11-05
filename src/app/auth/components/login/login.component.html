@@ -1,0 +1,72 @@
+
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button href="/tabs"> Back </ion-button>
+  </ion-buttons>
+  <ion-title>Login</ion-title>
+  <ion-buttons slot="end">
+    <!-- <ion-button> End </ion-button> -->
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content  scroll-y="false">
+  <ion-list [inset]="true">
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-input label="Email or phone" name="username" type="text" required matInput formControlName="email_phone" autocomplete="off"
+        placeholder="{{ 'Your email / phone or code'}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Password" name="password" type="password" required matInput formControlName="password" autocomplete='new-password'
+        placeholder="{{'Your password'}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-toggle>
+          <ion-label>Remember me!</ion-label>
+          <ion-note color="medium">Toggle to remember</ion-note>
+        </ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-button (click)="login()" style="width:100%; height: 50px; font-size:larger">Login</ion-button> 
+      </ion-item>
+    </form>
+    
+  </ion-list>
+
+</ion-content>
+
+<ion-content  scroll-y="false">
+  <!-- <app-tabs></app-tabs> -->
+
+</ion-content>
+
+<!-- <ion-content  scroll-y="false">
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/tabs/tab1']">
+        <ion-icon aria-hidden="true" name="swap-horizontal-outline"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/tabs/tab2']">
+        <ion-icon aria-hidden="true" name="newspaper-outline"></ion-icon>
+        <ion-label>News</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="true ? ['/tabs/tab3'] : ['/auth/login']">
+        <ion-icon aria-hidden="true" name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  
+  </ion-tabs>
+  
+</ion-content> -->
+
+
+<!-- 
+  <ion-note color="medium" class="ion-margin-horizontal">
+    Your comments will be kept anonymous and will only be used to improve the reliability of our products.</ion-note
+  > -->

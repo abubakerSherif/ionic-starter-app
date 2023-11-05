@@ -1,0 +1,77 @@
+<!-- <ion-button id="open-modal" expand="block">Open</ion-button> -->
+
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Welcome</ion-title>
+        <ion-buttons slot="end">
+          <!-- <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button> -->
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content  scroll-y="false" class="ion-padding">
+
+      <app-news-create></app-news-create>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+
+<ion-list>
+    <ion-item>
+      <ion-select [(ngModel)]="searchText1" (ionChange)="getNews()" label="Sort by" placeholder="Favorite Fruit">
+        <ion-select-option value="">None</ion-select-option>
+        <ion-select-option value="asc">Ascending</ion-select-option>
+        <ion-select-option value="desc">Descending</ion-select-option>
+      </ion-select>
+    </ion-item>
+  <ion-item>
+    <ion-input matInput placeholder="{{ 'Search news by name...' }}" (input)="getNews()"
+    [(ngModel)]="searchText" name="search">
+    </ion-input>
+  </ion-item>
+
+  <ion-item-sliding *ngFor="let news of this.newsBody">
+    <!-- <ion-item-options side="start">
+      <ion-item-option color="success">
+        <ion-icon slot="bottom" name="archive"></ion-icon>
+        Archive
+      </ion-item-option>
+    </ion-item-options> -->
+
+    <ion-item (click)="show(news)">
+      <ion-label>
+        <h1>{{news.title}}</h1>
+        <p>{{news.body}}</p>        <p>{{news.created_at | date}}</p>
+
+      </ion-label>
+    </ion-item>
+
+    <ion-item-options>
+      <ion-item-option (click)="edit(news)">
+        <ion-icon slot="bottom" name="heart"></ion-icon>
+        Edit
+      </ion-item-option>
+      <ion-item-option color="danger">
+        <ion-icon slot="bottom" name="trash"></ion-icon>
+        Delete
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+
+  <!-- <ion-item *ngFor="let news of this.newsBody">
+    <div (click)="show(news)">
+      <ion-img src={{news.photo}}></ion-img>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <p item-right> {{news.id}}</p>
+      <p>{{news.title}}</p>
+    </div>
+
+  </ion-item> -->
+</ion-list>

@@ -1,0 +1,23 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button href="/tab2"> Back </ion-button>
+  </ion-buttons>
+  <ion-title>Show news</ion-title>
+  <ion-buttons slot="end">
+    <!-- <ion-button> End </ion-button> -->
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content  scroll-y="false" class="ion-padding">
+  <ion-card>
+    <img alt="Silhouette of mountains" src={{this.showData.data.photo}} />
+    <ion-card-header>
+      <ion-card-title>{{this.showData.data.title}}</ion-card-title>
+      <ion-card-subtitle>{{this.showData.data.publishedAt | date}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+        {{this.showData.data.body}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
