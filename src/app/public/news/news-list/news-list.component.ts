@@ -45,8 +45,6 @@ export class NewsListComponent implements OnInit {
       pageSize: '5',
       pageIndex: '', 
     });
-    console.log(response);
-
     this.newsBody = response.data
 
   }

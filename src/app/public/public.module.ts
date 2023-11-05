@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PublicRoutingModule } from './public-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { IonicModule } from '@ionic/angular';
 import { NewsModule } from './news/news.module';
-import { NewsCreateComponent } from './news/news-create/news-create.component';
 
 @NgModule({
   declarations: [
+
   ],
   imports: [
     IonicModule,
@@ -18,6 +18,8 @@ import { NewsCreateComponent } from './news/news-create/news-create.component';
     ReactiveFormsModule,
   ],
   exports: [
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class PublicModule { }
